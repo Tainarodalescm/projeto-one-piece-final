@@ -1,0 +1,96 @@
+body {
+background-color: black;
+overflow: hidden; /*tudo que tranborda da imagem ele esconde tira a rolagem*/
+}
+ 
+main::after {
+    content: "";
+    position: fixed; /*ele fixa na tela*/
+    top: 0; 
+    left: 0; /*posisao esquerda*/
+    min-height: 100vh; /*altura minima*/
+    width: 80vw;/*largura ai sera em coluna dos pers e a foto*/
+
+    background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;
+}
+
+main .personagem {
+    display: none;
+    height: 100vh;
+} 
+
+main .personagem.selecionado {
+display: block;
+}
+
+main .personagem .imagem {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.conteudo {
+position: absolute; /*ele fica por cima de tudo*/
+top: 0; /*ele vai la pra cima na possisao zero*/
+left: 120px; /*eke afasta da borda da um espaço*/
+
+display: flex; /*centraliza um do lado do outro exposto em linhas*/
+flex-direction: column; /*dispor os elementos como coluna*/
+justify-content: center; /*alinhar conteudo verticalmente precisa de espaço pra ser centralizado*/
+min-height: 100vh;/*ele da altura do txt*/
+max-width: 380px; /*largura*/
+z-index: 1; /*ele joga o elemento em oriridade por cima de tudo*/
+}
+
+.conteudo .nome-personagem {
+   color: #ffffff;
+   font-size: 48px; /*tamanho da fonte*/
+   font-family: "Secular One"; /*fonte importada dp google*/
+   font-weight: 400; /*peso da fonte*/
+   margin-bottom: 20px;/*espaçamento entre os elementos e o botam entre elementos*/
+}
+
+.conteudo .descricao {
+    color: #ffffff;
+    font-family: "Rubik";
+    font-size: 16px;
+    line-height: 24px; /*altura entre as linhas*/
+}
+
+.conteudo .logo {
+    background-image: url("../imagens/one-piece-logo.png") ; /*.. serve para sair da pasta e pegar a img q quero */
+    background-size: cover ; /*serve para o logo cobrir a area q quero*/
+    height: 100px; /*altura*/
+    width: 230px; /*largura*/
+    margin-bottom: 35px; 
+}
+
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0; /*gruda na direita*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 180px;
+    justify-content: center;
+    align-items: center; /*alinhaento vertical*/
+    gap: 10px; /*espaço ntre eles*/
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.botoes .botao {
+    border: none;
+    background: #000000;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.botoes .botao img {
+    border-radius: 50%; /*deixa as coisas redondas*/
+
+}
+
+.botoes .botao.selecionado {
+transform: scale(1.2) ; /*aumenta o botao que for clicao*/
+box-shadow: 0 0 10px #d9d9d9; /*sombra do elemento*/
+}
